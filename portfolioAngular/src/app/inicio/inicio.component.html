@@ -1,0 +1,44 @@
+<section class="hero">
+  <div class="hero-content fade-in">
+    <h1>Fran Verdugo</h1>
+    <h1>Desarrollador de aplicaciones web</h1>
+    <p>Especializado en crear experiencias web atractivas y funcionales</p>
+  </div>
+</section>
+
+<section class="about fade-in">
+  <div class="container">
+    <h2>Sobre mí</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Soy un desarrollador web apasionado por crear soluciones digitales
+          elegantes y eficientes. Con experiencia en desarrollo frontend y backend,
+          me enfoco en construir aplicaciones web responsivas y accesibles.</p>
+        <p>Me encanta aprender nuevas tecnologías y actualmente estoy
+          profundizando mis conocimientos en Angular y desarrollo de aplicaciones
+          modernas basadas en componentes.</p>
+      </div>
+      <div class="about-image">
+        <div class="profile-placeholder">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills fade-in">
+  <div class="container">
+    <h2>Mis habilidades</h2>
+    <div class="skills-container">
+      <div *ngFor="let skill of skills" class="skill-item">
+        <div class="skill-name">{{skill.name}}</div>
+        <div class="skill-bar">
+          <div class="skill-progress" [style.width.%]="skill.percentage">
+            <span class="skill-percentage">{{skill.percentage}}%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

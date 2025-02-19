@@ -1,0 +1,104 @@
+<section class="contact">
+  <div class="container">
+    <h2>Contacto</h2>
+    <p class="subtitle">¿Tienes alguna pregunta o te gustaría trabajar juntos? ¡Contáctame!</p>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="info-item">
+          <div class="icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="details">
+            <h3>Ubicación</h3>
+            <p>Sevilla, España</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="details">
+            <h3>Email</h3>
+            <p>franjvr17&#64;gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="details">
+            <h3>Teléfono</h3>
+            <p>+34 656 612 782</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/franciscojesusverdugoruiz/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/FranR17/mi-primer-repositorio" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div *ngIf="formSubmitted" class="success-message">
+          <div class="success-icon">✓</div>
+          <h3>¡Mensaje enviado con éxito!</h3>
+          <p>Gracias por contactarme. Te responderé lo antes posible.</p>
+        </div>
+
+        <form *ngIf="!formSubmitted" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="contactForm.name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="contactForm.email"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Asunto</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              [(ngModel)]="contactForm.subject"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              [(ngModel)]="contactForm.message"
+              required
+            ></textarea>
+          </div>
+
+          <div *ngIf="formError" class="error-message">
+            Por favor completa todos los campos requeridos.
+          </div>
+
+          <button type="submit" class="btn-submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
